@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/baozaomiaomiao/VUE-UI/issues"
   },
-  "homepage": "https://github.com/baozaomiaomiao/VUE-UI#readme"
+  "homepage": "https://github.com/baozaomiaomiao/VUE-UI#readme",
+  "devDependencies": {
+    "vue": "^2.6.10"
+  }
 }
