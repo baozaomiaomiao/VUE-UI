@@ -1,25 +1,37 @@
 {
-  "name": "vue-ui-bao",
-  "version": "0.0.1",
-  "description": "这是一个UI框架",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/baozaomiaomiao/VUE-UI.git"
-  },
-  "keywords": [
-    "vue"
-  ],
-  "author": "baozaomiaomiao",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/baozaomiaomiao/VUE-UI/issues"
-  },
-  "homepage": "https://github.com/baozaomiaomiao/VUE-UI#readme",
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4"
-  }
+	"name": "vue-ui-bao",
+	"version": "0.0.1",
+	"description": "这是一个UI框架",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/baozaomiaomiao/VUE-UI.git"
+	},
+	"keywords": [
+		"vue"
+	],
+	"author": "baozaomiaomiao",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/baozaomiaomiao/VUE-UI/issues"
+	},
+	"homepage": "https://github.com/baozaomiaomiao/VUE-UI#readme",
+	"devDependencies": {
+		"@vue/component-compiler-utils": "^3.0.0",
+		"install": "^0.13.0",
+		"node-sass": "^4.13.0",
+		"parcel-bundler": "^1.12.4",
+		"sass": "^1.23.1",
+		"vue": "^2.6.10",
+		"vue-hot-reload-api": "^2.3.4"
+	},
+	"dependencies": {
+		"vue-template-compiler": "^2.6.10"
+	},
+	"alias": {
+		"vue": "./node_modules/vue/dist/vue.common.js"
+	}
 }
