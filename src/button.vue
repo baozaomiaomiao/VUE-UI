@@ -1,7 +1,7 @@
 <template>
 	<!-- 1.通过CSS控制按钮位置. 2.通过ES6动态属性, 配合vue切换类名-->
 	<button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
-		<g-icon v-if="icon" :name="icon"></g-icon>
+		<g-icon class="icon" v-if="icon" :name="icon"></g-icon>
 		<div class="content">
 			<slot></slot>
 		</div>
