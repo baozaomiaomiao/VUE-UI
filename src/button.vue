@@ -1,9 +1,21 @@
 <template>
-	<button class="g-button">按钮</button>
+	<!-- 1.通过CSS控制按钮位置. 2.通过ES6动态属性, 配合vue切换类名-->
+	<button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
+		<svg v-if="icon" class="icon">
+			<use :xlink:href="`#i-${icon}`"></use>
+		</svg>
+		<div class="content">
+			<slot></slot>
+		</div>
+	</button>
 </template>
+
 <script>
-export default {};
+export default {
+	props: ['icon', 'iconPosition'] //根据 iconPosition 动态设定 icon位置
+};
 </script>
+
 <style lang="scss">
 .g-button {
 	font-size: var(--font-size);
@@ -12,6 +24,10 @@ export default {};
 	border-radius: var(--border-radius);
 	border: 1px solid var(--border-color);
 	background: var(--button-bg);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	vertical-align: middle; //去除 inline属性系列.无法居中对齐的BUG inline-flex
 	&:hover {
 		border-color: var(--border-color-hover);
 	}
@@ -20,6 +36,23 @@ export default {};
 	}
 	&:focus {
 		outline: none; /*去除CSS控制按钮，导致蓝色边框的问题*/
+	}
+	> .content {
+		order: 2;
+	}
+	> .icon {
+		order: 1;
+		margin-right: 0.2em;
+	}
+	&.icon-right {
+		> .content {
+			order: 1;
+		}
+		> .icon {
+			order: 2;
+			margin-right: 0;
+			margin-left: 0.2em;
+		}
 	}
 }
 </style>

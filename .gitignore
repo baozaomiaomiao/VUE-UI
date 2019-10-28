@@ -1,1 +1,7 @@
 node_modules/
+dist/
+yarn-error.log
+.vscode
+.vscode/settings.json
+.cache/
+.gitignore
