@@ -12,7 +12,20 @@
 
 <script>
 export default {
-	props: ['icon', 'iconPosition'] //根据 iconPosition 动态设定 icon位置
+	// props: ['icon', 'iconPosition'] //根据 iconPosition 动态设定 icon位置
+	props: {
+		icon: {
+			type: String
+		},
+		iconPosition: {
+			type: String,
+			default: 'left',
+			// 通过拦截器,处理边界情况. 只接受 left || right
+			validator(value) {
+				return value === 'left' || value == 'right';
+			}
+		}
+	}
 };
 </script>
 
