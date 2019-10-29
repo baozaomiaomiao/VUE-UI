@@ -34,16 +34,25 @@
 
 	<body>
 		<div id="app">
-			<g-button>
+			<!-- loading状态，通过动态绑定的布尔值 来切换loading的显示-->>
+			<g-button :loading="loading1" @click="loading1 = !loading1">
 				设置
 			</g-button>
-			<g-button icon="setting" icon-position="right">
+			<g-button
+				icon="setting"
+				:loading="loading2"
+				@click="loading2 = !loading2"
+			>
 				设置
 			</g-button>
-			<g-button icon="setting">
+			<g-button
+				icon="setting"
+				:loading="loading3"
+				icon-position="right"
+				@click="loading3 = !loading3"
+			>
 				设置
 			</g-button>
-			<g-icon name="download"> </g-icon>
 		</div>
 
 		<script src="./src/app.js"></script>

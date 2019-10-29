@@ -1,8 +1,13 @@
 <template>
 	<!-- 1.通过CSS控制按钮位置. 2.通过ES6动态属性, 配合vue切换类名-->
-	<button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
-		<g-icon class="icon" v-if="icon" :name="icon"></g-icon>
-		<g-icon class="loading" name="loading"></g-icon>
+	<button
+		class="g-button"
+		:class="{ [`icon-${iconPosition}`]: true }"
+		@click="$emit('click')"
+	>
+		<!-- 如果有 loading 状态 就不显示icon-->
+		<g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+		<g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
 		<div class="content">
 			<slot></slot>
 		</div>
@@ -15,6 +20,10 @@ export default {
 	props: {
 		icon: {
 			type: String
+		},
+		loading: {
+			type: Boolean,
+			default: false
 		},
 		iconPosition: {
 			type: String,
@@ -29,6 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*loading 加载动画*/
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
@@ -73,9 +83,9 @@ export default {
 			margin-right: 0;
 			margin-left: 0.2em;
 		}
-		.loading {
-			animation: spin 1.5s infinite linear;
-		}
+	}
+	.loading {
+		animation: spin 1.5s infinite linear;
 	}
 }
 </style>
