@@ -1,5 +1,5 @@
 <template>
-	<!-- 1.通过CSS控制按钮位置. 2.通过ES6动态属性, 配合vue切换类名-->
+	<!-- 1.通过CSS控制按钮icon位置. 2.通过ES6动态属性, 配合vue切换类名-->
 	<button
 		class="g-button"
 		:class="{ [`icon-${iconPosition}`]: true }"
@@ -15,8 +15,11 @@
 </template>
 
 <script>
+import Icon from './icon';
 export default {
-	// props: ['icon', 'iconPosition'] //根据 iconPosition 动态设定 icon位置
+	components: {
+		'g-icon': Icon
+	},
 	props: {
 		icon: {
 			type: String
@@ -26,6 +29,7 @@ export default {
 			default: false
 		},
 		iconPosition: {
+			// 定位 icon 在左边还是右边
 			type: String,
 			default: 'left',
 			// 通过拦截器,处理边界情况. 只接受 left || right
