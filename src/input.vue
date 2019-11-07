@@ -5,9 +5,13 @@
 			type="text"
 			:disabled="disabled"
 			:readonly="readonly"
+			@change="$emit('change', $event)"
+			@input="$emit('input', $event)"
+			@focus="$emit('focus', $event)"
+			@blur="$emit('blur', $event)"
 		/>
 		<template v-if="error">
-			<!--通过判断 来确认是否展示提示信息。 -->
+			<!--通过判断error 来确认是否展示提示信息。 -->
 			<icon name="error" class="icon-error"></icon>
 			<span class="error-message">{{ error }}</span>
 		</template>
