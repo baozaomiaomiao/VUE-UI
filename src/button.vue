@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /*loading 加载动画*/
 @keyframes spin {
 	0% {
