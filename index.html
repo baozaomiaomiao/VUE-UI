@@ -1,83 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>VUE-UI</title>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-			html {
-				--button-height: 32px;
-				--font-size: 14px;
-				--button-bg: white;
-				--button-active-bg: #eee;
-				--border-radius: 4px;
-				--color: #333;
-				--border-color: #999;
-				--border-color-hover: #666;
-			}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>VUE-UI</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        --button-height: 32px;
+        --font-size: 14px;
+        --button-bg: white;
+        --button-active-bg: #eee;
+        --border-radius: 4px;
+        --color: #333;
+        --border-color: #999;
+        --border-color-hover: #666;
+      }
 
-			body {
-				font-size: var(--font-size);
-			}
+      body {
+        font-size: var(--font-size);
+      }
 
-			#app {
-				margin: 20px;
-			}
-		</style>
-		<style>
-			.box {
-				margin: 20px;
-			}
-		</style>
-	</head>
+      #app {
+        margin: 20px;
+      }
+    </style>
+    <style>
+      .box {
+        margin: 20px;
+      }
+    </style>
+  </head>
 
-	<body>
-		<div id="app">
-			<div class="box">
-				<g-input v-model="message"></g-input>
-				<p>{{ message }}</p>
-				<g-input value="张三" disabled></g-input>
-				<g-input value="张三" readonly></g-input>
-			</div>
-			<div class="box">
-				<g-input value="张" error="姓名不能少于两个字"></g-input>
-			</div>
+  <body>
+    <div id="app">
+      <div class="box">
+        <g-input v-model="message"></g-input>
+        <p>{{ message }}</p>
+        <g-input value="张三" disabled></g-input>
+        <g-input value="张三" readonly></g-input>
+      </div>
+      <div class="box">
+        <g-input value="张" error="姓名不能少于两个字"></g-input>
+      </div>
 
-			<div class="box">
-				<!-- loading状态，通过动态绑定的布尔值 来切换loading的显示-->
-				<g-button :loading="loading1" @click="loading1 = !loading1">
-					设置
-				</g-button>
-				<g-button
-					icon="setting"
-					:loading="loading2"
-					@click="loading2 = !loading2"
-				>
-					设置
-				</g-button>
-				<g-button
-					icon="setting"
-					:loading="loading3"
-					icon-position="right"
-					@click="loading3 = !loading3"
-				>
-					设置
-				</g-button>
+      <div class="box">
+        <!-- loading状态，通过动态绑定的布尔值 来切换loading的显示-->
+        <g-button :loading="loading1" @click="loading1 = !loading1">
+          设置
+        </g-button>
+        <g-button
+          icon="setting"
+          :loading="loading2"
+          @click="loading2 = !loading2"
+        >
+          设置
+        </g-button>
+        <g-button
+          icon="setting"
+          :loading="loading3"
+          icon-position="right"
+          @click="loading3 = !loading3"
+        >
+          设置
+        </g-button>
 
-				<g-button-group>
-					<g-button icon="left">上一页</g-button>
-					<g-button>更多</g-button>
-					<g-button icon="right" icon-position="right">下一页</g-button>
-				</g-button-group>
-			</div>
-			<svg></svg>
-		</div>
-		<script src="./src/app.js"></script>
-	</body>
+        <g-button-group>
+          <g-button icon="left">上一页</g-button>
+          <g-button>更多</g-button>
+          <g-button icon="right" icon-position="right">下一页</g-button>
+        </g-button-group>
+      </div>
+
+      <g-row gutter="12">
+				<g-col span="12"></g-col>
+				<g-col span="12"></g-col>
+			</g-row>
+			
+      <g-row  gutter="12">
+				<g-col span="8"></g-col>
+				<g-col span="8"></g-col>
+				<g-col span="8"></g-col>
+			</g-row  gutter="12">
+			
+      <g-row  gutter="12">
+				<g-col span="6"></g-col>
+				<g-col span="6"></g-col>
+				<g-col span="6"></g-col>
+				<g-col span="6"></g-col>
+      </g-row>
+      <g-row  gutter="12">
+        <g-col span="2"></g-col>
+        <g-col span="22"></g-col>
+			</g-row>
+			
+      <svg></svg>
+    </div>
+    <script src="./src/app.js"></script>
+  </body>
 </html>
